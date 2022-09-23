@@ -1,22 +1,24 @@
 import React from "react";
-import { Input, Stack, FormControl, VStack, Image, Text, Button, HStack } from "native-base";
+import { Input, Stack, FormControl, View, Image, Button, HStack, VStack, Text } from "native-base";
 import { TouchableOpacity } from "react-native-web";
 
 const LoginImg = require("../assets/loginImage.png");
 
-function RegisterPage() {
+function Register({ navigation }) {
   return (
-    <>
-      <>
-        <Image source={LoginImg} w="280" h="177" marginTop="20" />
-      </>
-      <VStack>
-        <Text marginTop="10" marginBottom="3" fontSize="25" fontWeight="bold">
-          Register
-        </Text>
-        <FormControl>
-          <Stack space={3}>
-            <Stack width="300">
+    <VStack padding="8">
+      <View alignItems="center">
+        <Image source={LoginImg} w="250" h="230" marginTop="60" marginBottom="10" />
+      </View>
+
+      <View fontWeight="bold">
+        <Text>Register</Text>
+      </View>
+
+      <View>
+        <FormControl marginTop="5">
+          <Stack space={5}>
+            <Stack>
               <Input border="1px black solid" backgroundColor="whitesmoke" p={2} placeholder="Email" />
             </Stack>
             <Stack>
@@ -27,22 +29,28 @@ function RegisterPage() {
             </Stack>
           </Stack>
         </FormControl>
-        <Button backgroundColor="danger.500" marginTop="8">
-          <Text color="white" fontSize="16" fontWeight="600">
+      </View>
+
+      <View>
+        <Button backgroundColor="danger.500" marginTop="4">
+          <Text color="muted.50" fontSize="17" fontWeight="bold">
             Register
           </Text>
         </Button>
-      </VStack>
-      <HStack alignItems="center" marginTop="2" fontSize="15">
-        <Text marginRight="1">Joined us before ?</Text>
-        <TouchableOpacity>
-          <Text fontWeight="500" color="red.500">
-            Login
-          </Text>
-        </TouchableOpacity>
-      </HStack>
-    </>
+      </View>
+
+      <View>
+        <HStack justifyContent="center" marginTop="2" fontSize="16">
+          <Text marginRight="1">Joined us before ?</Text>
+          <TouchableOpacity fontWeight="800" onPress={() => navigation.navigate("Login")}>
+            <Text color="red.500" marginleft="1" fontWeight="500">
+              Login
+            </Text>
+          </TouchableOpacity>
+        </HStack>
+      </View>
+    </VStack>
   );
 }
 
-export default RegisterPage;
+export default Register;

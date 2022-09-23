@@ -5,7 +5,7 @@ const FrontPageImg = require("../assets/frontImage.png");
 const TodoImg = require("../assets/WaysTodo.png");
 
 //! FRONTPAGE FUNCTION
-function FrontPage({ navigation }) {
+function Home({ navigation }) {
   return (
     <VStack space={5} width="100%" marginTop="20px">
       <View alignItems="center">
@@ -18,12 +18,12 @@ function FrontPage({ navigation }) {
         Write your activity and finish your activity. Fast, Simple and Easy to Use
       </Text>
       <View alignItems="center">
-        <Button width={80} marginBottom="4" alignItems="center" bg="danger.500" rounded="md" shadow={3} onPress={() => navigation.navigate("RegisterPage")}>
+        <Button width={80} marginBottom="4" alignItems="center" bg="danger.500" rounded="md" shadow={3} onPress={() => navigation.navigate("Register")}>
           <Text color="white" fontWeight="bold" fontSize="20">
             Register
           </Text>
         </Button>
-        <Button width={80} bg="muted.400" rounded="md" shadow={3} onPress={() => navigation.navigate("LoginPage")}>
+        <Button width={80} bg="muted.400" rounded="md" shadow={3} onPress={() => navigation.navigate("Login")}>
           <Text color="white" fontWeight="bold" fontSize="20">
             Login
           </Text>
@@ -33,4 +33,4 @@ function FrontPage({ navigation }) {
   );
 }
 
-export default FrontPage;
+export default Home;

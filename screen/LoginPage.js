@@ -1,11 +1,10 @@
 import React from "react";
-import { Input, Stack, FormControl, View, Image, Button, HStack, VStack } from "native-base";
-import { Text } from "react-native";
+import { Input, Stack, FormControl, View, Text, Image, Button, HStack, VStack } from "native-base";
 import { TouchableOpacity } from "react-native-web";
 
 const LoginImg = require("../assets/loginImage.png");
 
-function LoginPage() {
+function Login({ navigation }) {
   return (
     <VStack padding="8">
       <View alignItems="center">
@@ -28,27 +27,27 @@ function LoginPage() {
           </Stack>
         </FormControl>
       </View>
-      
+
       <View>
-        <Button backgroundColor="danger.500" marginTop="8">
-          <Text fontSize="16" fontWeight="600">
+        <Button backgroundColor="danger.500" marginTop="4">
+          <Text color="muted.50" fontSize="17" fontWeight="bold">
             Login
           </Text>
         </Button>
       </View>
 
-      <HStack marginTop="2" fontSize="15">
-        <Text alignText="center" marginRight="1">
-          New user ?
-        </Text>
-        <TouchableOpacity fontWeight="500" color="red.500">
-          <Text marginleft="1" fontWeight="500" color="red.500">
-            Register
-          </Text>
-        </TouchableOpacity>
-      </HStack>
+      <View>
+        <HStack justifyContent="center" marginTop="2" fontSize="16">
+          <Text marginRight="1">New user ?</Text>
+          <TouchableOpacity fontWeight="800" onPress={() => navigation.navigate("Register")}>
+            <Text color="red.500" marginleft="1" fontWeight="500">
+              Register
+            </Text>
+          </TouchableOpacity>
+        </HStack>
+      </View>
     </VStack>
   );
 }
 
-export default LoginPage;
+export default Login;
